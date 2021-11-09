@@ -7,7 +7,7 @@
 */
 
 var CONFIG = {
-   customTheme: CUSTOM_THEMES.HOMEKIT, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
+   customTheme: CUSTOM_THEMES.TRANSPARENT, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
    transition: TRANSITIONS.ANIMATED_GPU, //ANIMATED or SIMPLE (better perfomance)
    entitySize: ENTITY_SIZES.NORMAL, //SMALL, BIG are available
    tileSize: 150,
@@ -34,15 +34,15 @@ var CONFIG = {
       right: [
          {
             type: HEADER_ITEMS.CUSTOM_HTML,
-            html: 'MyCity'
+            html: 'Nuuk'
          },
          {
             type: HEADER_ITEMS.WEATHER,
             styles: {
                margin: '0'
             },
-            icon: '&weather.mycity.state',
-            state: '&weather.mycity.state',
+            icon: '&weather.nuuk.state',
+            state: '&weather.nuuk.state',
             icons: {
                'clear-day': 'clear',
                'clear-night': 'nt-clear',

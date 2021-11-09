@@ -1,5 +1,18 @@
+homeassistant:
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  elevation: 50
 
-# Configure a default setup of Home Assistant (frontend, api, etc)
+  # Name of the location where Home Assistant is running
+  name:  Húsvætti
+
+  # C for Celcius, F for Fahrenheit
+  unit_system: metric
+
+  time_zone: America/Godthab
+
+  currency: DKK
+
 default_config:
 
 group: !include groups.yaml
