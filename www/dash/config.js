@@ -93,10 +93,17 @@ var CONFIG = {
 
    pages: [
       {
-         title: 'Main page',
-         bg: 'images/bg-polar-bear.jpg',
+         title: 'Heima',
+         bg: 'images/bg-nuuk.jpg',
          icon: 'mdi-home-outline', // home icon
-         groups: []
+         groups: [
+            {
+               title: '',
+               width: 2,
+               height: 3,
+               items: []
+            }
+         ]
       }
    ],
 
