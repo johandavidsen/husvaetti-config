@@ -31,18 +31,22 @@ var CONFIG = {
          margin: '30px 130px 0',
          fontSize: '28px'
       },
-      right: [
+
+      left: [
          {
-            type: HEADER_ITEMS.CUSTOM_HTML,
-            html: 'Nuuk'
-         },
+            type: HEADER_ITEMS.DATETIME,
+            dateFormat: 'EEEE, dd LLLL', //https://docs.angularjs.org/api/ng/filter/date
+         }
+      ],
+
+      right: [
          {
             type: HEADER_ITEMS.WEATHER,
             styles: {
                margin: '0'
             },
-            icon: '&weather.nuuk.state',
-            state: '&weather.nuuk.state',
+            icon: '&weather.husvaetti.state',
+            state: '&weather.husvaetti.state',
             icons: {
                'clear-day': 'clear',
                'clear-night': 'nt-clear',
@@ -80,29 +84,21 @@ var CONFIG = {
                'windy-variant': 'Windy'
             },
             fields: {
-               temperature: '&weather.mycity.attributes.temperature',
+               temperature: '&weather.husvaetti.attributes.temperature',
                temperatureUnit: '°C',
             }
           }
-      ],
-      left: [
-         {
-            type: HEADER_ITEMS.CUSTOM_HTML,
-            html: '<b><i>Home Sweet Home</b></i>'
-         },
-         {
-            type: HEADER_ITEMS.DATETIME,
-            dateFormat: 'EEEE, dd LLLL', //https://docs.angularjs.org/api/ng/filter/date
-         },
-         // {
-         //    type: HEADER_ITEMS.DATE,
-         //    dateFormat: 'EEEE, LLLL dd', //https://docs.angularjs.org/api/ng/filter/date
-         // },
-         // {
-         //    type: HEADER_ITEMS.TIME,
-         // },
       ]
    },
+
+   pages: [
+      {
+         title: 'Main page',
+         bg: 'images/bg-polar-bear.jpg',
+         icon: 'mdi-home-outline', // home icon
+         groups: []
+      }
+   ],
 
    /*screensaver: {// optional. https://github.com/resoai/TileBoard/wiki/Screensaver-configuration
       timeout: 300, // after 5 mins of inactive
@@ -124,7 +120,7 @@ var CONFIG = {
          { bg: 'images/bg3.jpg' }
       ]
    },*/
-
+   /*
    pages: [
       {
          title: 'Main page',
@@ -317,6 +313,7 @@ var CONFIG = {
                               + '&sensor.openweathermap_cloud_coverage.state'
                               + '&sensor.openweathermap_cloud_coverage.attributes.unit_of_measurement',
                            */
+/*
                         ]
                      }
                   }
@@ -414,4 +411,5 @@ var CONFIG = {
          ]
       }
    ],
+   */
 }
