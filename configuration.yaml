@@ -42,3 +42,8 @@ scene: !include scenes.yaml
 #                     Calendar Config
 # ------------------------------------------------------------ #
 calendar: !include calendar.yaml
+
+# ------------------------------------------------------------ #
+#                     WorldClock Config
+# ------------------------------------------------------------ #
+sensor: !include sensor/worldclock.yaml
