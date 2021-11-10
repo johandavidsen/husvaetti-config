@@ -101,7 +101,7 @@ var CONFIG = {
          icon: 'mdi-home-outline', // home icon
          groups: [
             {
-               title: 'Veðrið',
+               title: 'veðrið',
                width: 2,
                height: 3,
                items: [

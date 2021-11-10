@@ -1,3 +1,7 @@
+.-theme-transparent .item {
+    background: rgba(0,0,0,.5) !important;
+}
+
 body {
     background-color: #ffffff;
 }
