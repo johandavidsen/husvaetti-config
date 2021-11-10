@@ -2,6 +2,10 @@
     background: rgba(0,0,0,.5) !important;
 }
 
+.group-title {
+    font-size: 2rem;
+}
+
 body {
     background-color: #ffffff;
 }

@@ -102,8 +102,9 @@ var CONFIG = {
          groups: [
             {
                title: 'veðrið',
-               width: 2,
-               height: 3,
+               width: 4,
+               height: 2,
+               groupMarginCss: "20px",
                items: [
                   {
                      position: [0, 0],
@@ -194,6 +195,39 @@ var CONFIG = {
                      })
                   }
                ],
+            },
+            {
+               title: 'klokkan er',
+               width: 3,
+               height: 2,
+               row: 1,
+               items: [
+                  {
+                     position: [0, 0],
+                     type: TYPES.SENSOR,
+                     title: '&sensor.nuuk.attributes.friendly_name',
+                     id: 'sensor.nuuk',
+                     unit: '', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [1, 0],
+                     type: TYPES.SENSOR,
+                     title: '&sensor.sorvagur.attributes.friendly_name',
+                     id: 'sensor.sorvagur',
+                     unit: '', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [2, 0],
+                     type: TYPES.SENSOR,
+                     title: '&sensor.keypmannahavn.attributes.friendly_name',
+                     id: 'sensor.keypmannahavn',
+                     unit: '', // override default entity unit
+                     state: false, // hidding state
+                  },
+
+               ]
             }
          ]
       }
