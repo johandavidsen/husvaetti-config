@@ -1,3 +1,6 @@
+# ------------------------------------------------------------ #
+#                Home-assistant Default Config
+# ------------------------------------------------------------ #
 homeassistant:
   latitude: !secret latitude_home
   longitude: !secret longitude_home
@@ -15,9 +18,27 @@ homeassistant:
 
 default_config:
 
+# ------------------------------------------------------------ #
+#                     Groups Config
+# ------------------------------------------------------------ #
 group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-scene: !include scenes.yaml
-calendar: !include calendar.yaml
 
+# ------------------------------------------------------------ #
+#                     Automations Config
+# ------------------------------------------------------------ #
+automation: !include automations.yaml
+
+# ------------------------------------------------------------ #
+#                     Scripts Config
+# ------------------------------------------------------------ #
+script: !include scripts.yaml
+
+# ------------------------------------------------------------ #
+#                     Scenes Config
+# ------------------------------------------------------------ #
+scene: !include scenes.yaml
+
+# ------------------------------------------------------------ #
+#                     Calendar Config
+# ------------------------------------------------------------ #
+calendar: !include calendar.yaml

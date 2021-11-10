@@ -98,10 +98,12 @@ var CONFIG = {
          icon: 'mdi-home-outline', // home icon
          groups: [
             {
-               title: '',
+               title: 'Veðrið',
                width: 2,
                height: 3,
-               items: []
+               items: [
+
+               ],
             }
          ]
       }
