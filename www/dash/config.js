@@ -45,8 +45,10 @@ var CONFIG = {
             styles: {
                margin: '0'
             },
-            icon: '&weather.husvaetti.state',
-            state: '&weather.husvaetti.state',
+            icon: function () {
+               let sensor = this.states['weather.husvaetti'];
+               return sensor.attributes.forecast[0].condition;
+            },
             icons: {
                'clear-day': 'clear',
                'clear-night': 'nt-clear',
@@ -60,6 +62,7 @@ var CONFIG = {
                'partly-cloudy-night': 'nt-partlycloudy',
                'partlycloudy': 'partlycloudy',
                'pouring': 'rain',
+               'sunny': 'sunny',
                'snowy': 'snow',
                'snowy-rainy': 'sleet',
                'wind': 'unknown',
@@ -102,7 +105,94 @@ var CONFIG = {
                width: 2,
                height: 3,
                items: [
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 2,
+                     type: TYPES.WEATHER,
+                     id: {},
+                     state: function () {
+                        let sensor = this.states['weather.husvaetti'];
+                        return sensor.attributes.forecast[0].condition;
+                     },
+                     icon: function () {
+                        let sensor = this.states['weather.husvaetti'];
+                        return sensor.attributes.forecast[0].condition;
+                     },
+                     icons: {
+                        'clear-day': 'clear',
+                        'clear-night': 'nt-clear',
+                        'cloudy': 'cloudy',
+                        'sunny': 'sunny',
+                        'rain': 'rain',
+                        'sleet': 'sleet',
+                        'snow': 'snow',
+                        'wind': 'hazy',
+                        'fog': 'fog',
+                        'partly-cloudy-day': 'partlycloudy',
+                        'partly-cloudy-night': 'nt-partlycloudy'
+                     },
+                     fields: {
+                        temperature: '&weather.husvaetti.attributes.temperature',
+                        temperatureUnit: ' °C',
+                        windSpeed: '&weather.husvaetti.attributes.wind_speed',
+                        windSpeedUnit: ' m/s',
+                        humidity: '&weather.husvaetti.attributes.humidity',
+                        humidityUnit: ' %',
 
+                     }
+                  },
+                  {
+                     position: [1, 0],
+                     type: TYPES.WEATHER_LIST,
+                     width: 3,
+                     height: 2,
+                     title: '5 daga forsøgning',
+                     id: {},
+                     icons: {
+                        'clear-day': 'clear',
+                        'clear-night': 'nt-clear',
+                        'cloudy': 'cloudy',
+                        'rain': 'rain',
+                        'sleet': 'sleet',
+                        'snow': 'snow',
+                        'wind': 'hazy',
+                        'fog': 'fog',
+                        'partly-cloudy-day': 'partlycloudy',
+                        'partly-cloudy-night': 'nt-partlycloudy'
+                     },
+                     hideHeader: false,
+                     primaryTitle: 'Hitastig',
+                     secondaryTitle: 'Avfall',
+                     state: false,
+                     list: [0,1,2,3,4].map(function (id) {
+                        return {
+                           date: function () {
+                              var d = new Date(Date.now() + id * 24 * 60 * 60 * 1000);
+                              return d.toString().split(' ').slice(1, 3).join(' ');
+                              },
+                           icon: function() {
+                              var sensor = this.states['weather.husvaetti'];
+                              return sensor.attributes.forecast[id].condition;
+                           },
+                           primary: function() {
+                              var sensor = this.states['weather.husvaetti'];
+                              var forecast = sensor.attributes.forecast[id].temperature + " / ";
+                              forecast += sensor.attributes.forecast[id].templow + " °C";
+                              return forecast;
+                           },
+                           secondary: function() {
+                              var sensor = this.states['weather.husvaetti'];
+                              var precipitation = sensor.attributes.forecast[id].precipitation;
+                              if (precipitation == null) {
+                                 precipitation = "0";
+                              }
+                              precipitation += " mm";
+                              return precipitation;
+                           }
+                        }
+                     })
+                  }
                ],
             }
          ]
