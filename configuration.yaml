@@ -20,4 +20,5 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 calendar: !include calendar.yaml
-
+input_number: !include inputs/input_number.yaml
+input_select: !include inputs/input_select.yaml

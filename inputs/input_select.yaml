@@ -1,0 +1,13 @@
+radio_speaker:
+  name: 'Select Speaker'
+  options:
+    - 'Frigg'
+  initial: 'Frigg'
+  icon: mdi:speaker-wireless
+
+radio_station:
+  name: 'Select Radio Station'
+  options:
+    - 'Kvf'
+  initial: Kvf
+  icon: mdi:radio
