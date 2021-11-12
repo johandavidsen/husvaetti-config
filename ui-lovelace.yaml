@@ -12,21 +12,45 @@ views:
 #                       Heima View                             #
 # ------------------------------------------------------------ #
   - id: 0
-    icon: mdi:castle
+    icon: mdi:home
     name: Heima
     cards:
+      - type: vertical-stack
+        cards:
+          # -------------------------------------------------- #
+          #              Weather View                          #
+          # -------------------------------------------------- #
+          - type: weather-forecast
+            entity: weather.husvaetti
+
+          # -------------------------------------------------- #
+          #              Calendar View                         #
+          # -------------------------------------------------- #
+          - type: calendar
+            entities:
+              - calendar.*
+
+      # ------------------------------------------------------ #
+      #                 Media Player View                      #
+      # ------------------------------------------------------ #
       - type: custom:mini-media-player
         entity: media_player.frigg
         hide:
           volume: true
+
+      # ------------------------------------------------------ #
+      #                 Map View                               #
+      # ------------------------------------------------------ #
+      - type: map
+        aspect_ratio: 16:9
+        default_zoom: 12
+        entities:
+          - zone.home
+
 # ------------------------------------------------------------ #
-#                       Heima View                             #
+#                       Work Systems View                      #
 # ------------------------------------------------------------ #
-  - id: 1
-    icon: mdi:castle
+  - id: work-systems
+    icon: mdi:server
     name: Fjakkarin
     cards:
-      - type: custom:mini-media-player
-        entity: media_player.frigg
-        hide:
-          volume: true
