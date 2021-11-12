@@ -1,59 +1,57 @@
 # ------------------------------------------------------------ #
-#                Home-assistant Default Config
+#                Home-assistant Default Config                 #
 # ------------------------------------------------------------ #
 homeassistant:
-  latitude: !secret latitude_home
-  longitude: !secret longitude_home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   elevation: 50
 
   # Name of the location where Home Assistant is running
-  name:  Húsvætti
+  name:  !secret home_name
 
   # C for Celcius, F for Fahrenheit
   unit_system: metric
 
-  time_zone: America/Godthab
+  time_zone: !secret home_timezone
 
   currency: DKK
+
+  packages: !include_dir_named packages
 
 default_config:
 
 # ------------------------------------------------------------ #
-#                     Groups Config
+#                     Groups Config                            #
 # ------------------------------------------------------------ #
 group: !include groups.yaml
 
 # ------------------------------------------------------------ #
-#                     Automations Config
+#                     Automations Config                       #
 # ------------------------------------------------------------ #
 automation: !include automations.yaml
 
 # ------------------------------------------------------------ #
-#                     Scripts Config
+#                     Scripts Config                           #
 # ------------------------------------------------------------ #
 script: !include scripts.yaml
 
 # ------------------------------------------------------------ #
-#                     Scenes Config
+#                     Scenes Config                            #
 # ------------------------------------------------------------ #
 scene: !include scenes.yaml
 
 # ------------------------------------------------------------ #
-#                     Calendar Config
+#                     Calendar Config                          #
 # ------------------------------------------------------------ #
 calendar: !include calendar.yaml
 
 # ------------------------------------------------------------ #
-#                     Input Config
+#                     Input Config                             #
 # ------------------------------------------------------------ #
 input_number: !include inputs/input_number.yaml
 
 # ------------------------------------------------------------ #
-#                     Select Config
+#                     Select Config                            #
 # ------------------------------------------------------------ #
 input_select: !include inputs/input_select.yaml
 
-# ------------------------------------------------------------ #
-#                     WorldClock Config
-# ------------------------------------------------------------ #
-sensor: !include sensor/worldclock.yaml
