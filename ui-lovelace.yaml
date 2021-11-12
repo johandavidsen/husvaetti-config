@@ -3,9 +3,30 @@ title: !secret home_name
 resources:
   - url: https://fonts.googleapis.com/css?family=Comfortaa&display=swap
     type: css
+  - url: /local/ui_components/mini-media-player-bundle.js
+    type: module
 
 views:
+
+# ------------------------------------------------------------ #
+#                       Heima View                             #
+# ------------------------------------------------------------ #
   - id: 0
     icon: mdi:castle
-    name: Home
+    name: Heima
     cards:
+      - type: custom:mini-media-player
+        entity: media_player.frigg
+        hide:
+          volume: true
+# ------------------------------------------------------------ #
+#                       Heima View                             #
+# ------------------------------------------------------------ #
+  - id: 1
+    icon: mdi:castle
+    name: Fjakkarin
+    cards:
+      - type: custom:mini-media-player
+        entity: media_player.frigg
+        hide:
+          volume: true
