@@ -1,0 +1,20 @@
+# ------------------------------------------------------------ #
+#                   Date and Times Config                      #
+# ------------------------------------------------------------ #
+
+sensor:
+
+# ------------------------------------------------------------ #
+#                   WorldClock Config                          #
+# ------------------------------------------------------------ #
+  - platform: worldclock
+    name: Nuuk
+    time_zone: America/Godthab
+
+  - platform: worldclock
+    name: Sørvágur
+    time_zone: Atlantic/Faroe
+
+  - platform: worldclock
+    name: Keypmannahavn
+    time_zone: Europe/Copenhagen
