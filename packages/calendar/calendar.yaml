@@ -1,0 +1,28 @@
+# ------------------------------------------------------------ #
+#                     Calendar Config                          #
+# ------------------------------------------------------------ #
+
+calendar:
+  - platform: caldav
+    username: !secret work_calendar_user
+    password: !secret work_calendar_password
+    url: !secret work_calendar_url
+    custom_calendars:
+      - name: !secret work_calendar_mapping_0
+        calendar: !secret work_calendar_mapping_0_alt
+        search: ".*"
+
+  - platform: caldav
+    username: !secret private_calendar_user
+    password: !secret private_calendar_password
+    url: !secret private_calendar_url
+    custom_calendars:
+      - name: !secret private_calendar_mapping_0
+        calendar: !secret private_calendar_mapping_0
+       search: ".*"
+     - name: !secret private_calendar_mapping_1
+       calendar: !secret private_calendar_mapping_1
+       search: ".*"
+     - name: !secret private_calendar_mapping_2
+       calendar: !secret private_calendar_mapping_2
+       search: ".*"
