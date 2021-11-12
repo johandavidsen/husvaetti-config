@@ -1,0 +1,11 @@
+title: !secret home_name
+
+resources:
+  - url: https://fonts.googleapis.com/css?family=Comfortaa&display=swap
+    type: css
+
+views:
+  - id: 0
+    icon: mdi:castle
+    name: Home
+    cards:
