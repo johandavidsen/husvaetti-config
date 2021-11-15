@@ -55,17 +55,131 @@ views:
 # ------------------------------------------------------------ #
   - id: work-systems
     icon: mdi:server
-    name: Fjakkarin
+    title: Fjakkarin
     cards:
-      - type: horizontal-stack
-        title: Remote systems
-        cards:
-          - type: entities
-            title: Linode
-            entities:
-              - entity: !secret linode_sever_0_ui
-                icon: mdi:server
-              - entity: !secret linode_sever_1_ui
-                icon: mdi:server
-              - entity: !secret linode_sever_2_ui
-                icon: mdi:server
+      - type: entities
+        title: !secret linode_server_0
+        show_header_toggle: false
+        entities:
+          - type: attribute
+            entity: !secret linode_server_0_ui
+            name: Created
+            icon: mdi:timer
+            state_color: true
+            format: relative
+            attribute: created
+          - type: attribute
+            entity: !secret linode_server_0_ui
+            name: IP (v4)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv4_address
+          - type: attribute
+            entity: !secret linode_server_0_ui
+            name: IP (v6)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv6_address
+          - type: attribute
+            entity: !secret linode_server_0_ui
+            name: Mem
+            icon: mdi:harddisk
+            state_color: true
+            suffix: GB
+            attribute: memory
+          - type: attribute
+            entity: !secret linode_server_0_ui
+            name: Location
+            icon: mdi:earth
+            state_color: true
+            attribute: region
+          - type: attribute
+            entity: !secret linode_server_0_ui
+            name: Running
+            icon: mdi:server
+            state_color: true
+            attribute: device_class
+      - type: entities
+        title: !secret linode_server_1
+        show_header_toggle: false
+        entities:
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: Created
+            icon: mdi:timer
+            state_color: true
+            format: relative
+            attribute: created
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: IP (v4)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv4_address
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: IP (v6)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv6_address
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: Mem
+            icon: mdi:harddisk
+            state_color: true
+            suffix: GB
+            attribute: memory
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: Location
+            icon: mdi:earth
+            state_color: true
+            attribute: region
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: Running
+            icon: mdi:server
+            state_color: true
+            attribute: device_class
+      - type: entities
+        title: !secret linode_server_2
+        show_header_toggle: false
+        entities:
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: Created
+            icon: mdi:timer
+            state_color: true
+            format: relative
+            attribute: created
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: IP (v4)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv4_address
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: IP (v6)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv6_address
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: Mem
+            icon: mdi:harddisk
+            state_color: true
+            suffix: GB
+            attribute: memory
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: Location
+            icon: mdi:earth
+            state_color: true
+            attribute: region
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: Running
+            icon: mdi:server
+            state_color: true
+            attribute: device_class
