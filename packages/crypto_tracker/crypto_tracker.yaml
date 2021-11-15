@@ -1,0 +1,23 @@
+# ------------------------------------------------------------ #
+#                    Crypto Tracker Config                     #
+# ------------------------------------------------------------ #
+sensor:
+  - platform: cryptostate
+    resources:
+      - compare: doge-eur
+        name: dogecoin (Doge to EUR)
+
+      - compare: eur-doge
+        name: dogecoin (EUR to Doge)
+
+      - compare: eur-btc
+        name: bitcoin (EUR to BitCoin)
+
+      - compare: btc-eur
+        name: bitcoin (BitCoin to EUR)
+
+      - compare: eth-eur
+        name: ethereum (Ethereum to EUR)
+
+      - compare: eur-eth
+        name: ethereum (EUR to Ethereum)

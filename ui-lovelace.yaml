@@ -5,6 +5,8 @@ resources:
     type: css
   - url: /local/ui_components/mini-media-player-bundle.js
     type: module
+  - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
+    type: module
 
 views:
 
@@ -49,6 +51,105 @@ views:
         default_zoom: 12
         entities:
           - zone.home
+
+# ------------------------------------------------------------ #
+#                       Finance View                           #
+# ------------------------------------------------------------ #
+  - id: finance
+    icon: mdi:currency-eur
+    cards:
+      - type: vertical-stack
+        title: Bitcoin
+        cards:
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.bitcoin_eur_to_bitcoin
+            name: EUR to Bitcoin
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-btc'
+            show:
+              labels: false
+
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.bitcoin_bitcoin_to_eur
+            name: Bitcoin to EUR
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eur'
+            show:
+              labels: false
+
+      - type: vertical-stack
+        title: Dogecoin
+        cards:
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.dogecoin_eur_to_doge
+            name: EUR to Dogecoin
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:dog'
+            show:
+              labels: false
+
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.dogecoin_doge_to_eur
+            name: Dogecoin to EUR
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eur'
+            show:
+              labels: false
+
+      - type: vertical-stack
+        title: Ethereum
+        cards:
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.ethereum_eur_to_ethereum
+            name: EUR to Ethereum
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eth'
+            show:
+              labels: false
+
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.ethereum_ethereum_to_eur
+            name: Ethereum to EUR
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eur'
+            show:
+              labels: false
 
 # ------------------------------------------------------------ #
 #                       Work Systems View                      #
