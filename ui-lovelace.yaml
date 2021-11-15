@@ -7,6 +7,8 @@ resources:
     type: module
   - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
     type: module
+  - url: /local/community/lovelace-card-mod/card-mod.js
+    type: module
 
 views:
 
@@ -158,55 +160,63 @@ views:
     icon: mdi:server
     title: Fjakkarin
     cards:
-      - type: entities
-        title: !secret linode_server_0
-        show_header_toggle: false
-        entities:
-          - type: attribute
-            entity: !secret linode_server_0_ui
-            name: Created
-            icon: mdi:timer
-            state_color: true
-            format: relative
-            attribute: created
-          - type: attribute
-            entity: !secret linode_server_0_ui
-            name: IP (v4)
-            icon: mdi:switch
-            state_color: true
-            attribute: ipv4_address
-          - type: attribute
-            entity: !secret linode_server_0_ui
-            name: IP (v6)
-            icon: mdi:switch
-            state_color: true
-            attribute: ipv6_address
-          - type: attribute
-            entity: !secret linode_server_0_ui
-            name: Mem
-            icon: mdi:harddisk
-            state_color: true
-            suffix: GB
-            attribute: memory
-          - type: attribute
-            entity: !secret linode_server_0_ui
-            name: Location
-            icon: mdi:earth
-            state_color: true
-            attribute: region
-          - type: attribute
-            entity: !secret linode_server_0_ui
-            name: Running
-            icon: mdi:server
-            state_color: true
-            attribute: device_class
+      - type: vertical-stack
+        title: "Fjarskipanir"
+        cards:
+          - type: entities
+            title: !secret linode_server_0
+            show_header_toggle: false
+            entities:
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Skapt"
+                icon: mdi:timer
+                state_color: true
+                format: relative
+                attribute: created
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: IP (v4)
+                icon: mdi:switch
+                state_color: true
+                attribute: ipv4_address
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: IP (v6)
+                icon: mdi:switch
+                state_color: true
+                attribute: ipv6_address
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Ritminni"
+                icon: mdi:harddisk
+                state_color: true
+                suffix: GB
+                attribute: memory
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Stað"
+                icon: mdi:earth
+                state_color: true
+                attribute: region
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Tendra"
+                icon: mdi:server
+                state_color: true
+                attribute: device_class
       - type: entities
         title: !secret linode_server_1
         show_header_toggle: false
+        card_mod:
+          style: |
+            :host {
+              padding-top: 72px
+            }
         entities:
           - type: attribute
             entity: !secret linode_server_1_ui
-            name: Created
+            name: "Skapt"
             icon: mdi:timer
             state_color: true
             format: relative
@@ -225,30 +235,35 @@ views:
             attribute: ipv6_address
           - type: attribute
             entity: !secret linode_server_1_ui
-            name: Mem
+            name: "Ritminni"
             icon: mdi:harddisk
             state_color: true
             suffix: GB
             attribute: memory
           - type: attribute
             entity: !secret linode_server_1_ui
-            name: Location
+            name: "Stað"
             icon: mdi:earth
             state_color: true
             attribute: region
           - type: attribute
             entity: !secret linode_server_1_ui
-            name: Running
+            name: "Tendra"
             icon: mdi:server
             state_color: true
             attribute: device_class
       - type: entities
         title: !secret linode_server_2
         show_header_toggle: false
+        card_mod:
+          style: |
+            :host {
+              padding-top: 72px
+            }
         entities:
           - type: attribute
             entity: !secret linode_server_2_ui
-            name: Created
+            name: "Skapt"
             icon: mdi:timer
             state_color: true
             format: relative
@@ -267,20 +282,20 @@ views:
             attribute: ipv6_address
           - type: attribute
             entity: !secret linode_server_2_ui
-            name: Mem
+            name: "Ritminni"
             icon: mdi:harddisk
             state_color: true
             suffix: GB
             attribute: memory
           - type: attribute
             entity: !secret linode_server_2_ui
-            name: Location
+            name: "Stað"
             icon: mdi:earth
             state_color: true
             attribute: region
           - type: attribute
             entity: !secret linode_server_2_ui
-            name: Running
+            name: "Tendra"
             icon: mdi:server
             state_color: true
             attribute: device_class
