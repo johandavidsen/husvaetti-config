@@ -28,7 +28,10 @@ views:
           # -------------------------------------------------- #
           - type: calendar
             entities:
-              - calendar.*
+              - !secret private_calendar_mapping_0_ui
+              - !secret private_calendar_mapping_1_ui
+              - !secret private_calendar_mapping_2_ui
+              - !secret work_calendar_mapping_0_ui
 
       # ------------------------------------------------------ #
       #                 Media Player View                      #
