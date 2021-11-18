@@ -57,7 +57,7 @@ views:
 # ------------------------------------------------------------ #
 #                       Finance View                           #
 # ------------------------------------------------------------ #
-  - id: finance
+  - id: 1
     icon: mdi:currency-eur
     cards:
       - type: vertical-stack
@@ -156,9 +156,9 @@ views:
 # ------------------------------------------------------------ #
 #                       Work Systems View                      #
 # ------------------------------------------------------------ #
-  - id: work-systems
+  - id: 2
     icon: mdi:server
-    title: Fjakkarin
+    title: Systems
     cards:
       - type: vertical-stack
         title: "Fjarskipanir"
