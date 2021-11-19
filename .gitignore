@@ -1,0 +1,5 @@
+.storage/
+.HA_VERSION
+
+*.log*
+*.db*
