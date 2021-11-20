@@ -1,8 +1,11 @@
+# Hide SSH files
 .ssh
+
+# Hide storage and cache files
 .storage/
 .HA_VERSION
-
 *.log*
 *.db*
-
+*__pycache__*
+known_devices.yaml
 secrets.yaml
