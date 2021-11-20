@@ -1,5 +1,8 @@
+.ssh
 .storage/
 .HA_VERSION
 
 *.log*
 *.db*
+
+secrets.yaml
