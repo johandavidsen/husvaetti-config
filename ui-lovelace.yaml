@@ -1,0 +1,301 @@
+title: !secret home_name
+
+resources:
+  - url: https://fonts.googleapis.com/css?family=Comfortaa&display=swap
+    type: css
+  - url: /local/ui_components/mini-media-player-bundle.js
+    type: module
+  - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /local/community/lovelace-card-mod/card-mod.js
+    type: module
+
+views:
+
+# ------------------------------------------------------------ #
+#                       Heima View                             #
+# ------------------------------------------------------------ #
+  - id: 0
+    icon: mdi:home
+    name: Heima
+    cards:
+      - type: vertical-stack
+        cards:
+          # -------------------------------------------------- #
+          #              Weather View                          #
+          # -------------------------------------------------- #
+          - type: weather-forecast
+            entity: weather.husvaetti
+
+          # -------------------------------------------------- #
+          #              Calendar View                         #
+          # -------------------------------------------------- #
+          - type: calendar
+            entities:
+              - !secret private_calendar_mapping_0_ui
+              - !secret private_calendar_mapping_1_ui
+              - !secret private_calendar_mapping_2_ui
+              - !secret work_calendar_mapping_0_ui
+
+      # ------------------------------------------------------ #
+      #                 Media Player View                      #
+      # ------------------------------------------------------ #
+      - type: custom:mini-media-player
+        entity: media_player.frigg
+        hide:
+          volume: true
+
+      # ------------------------------------------------------ #
+      #                 Map View                               #
+      # ------------------------------------------------------ #
+      - type: map
+        aspect_ratio: 16:9
+        default_zoom: 12
+        entities:
+          - zone.home
+
+# ------------------------------------------------------------ #
+#                       Finance View                           #
+# ------------------------------------------------------------ #
+  - id: 1
+    icon: mdi:currency-eur
+    cards:
+      - type: vertical-stack
+        title: Bitcoin
+        cards:
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.bitcoin_eur_to_bitcoin
+            name: EUR to Bitcoin
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-btc'
+            show:
+              labels: false
+
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.bitcoin_bitcoin_to_eur
+            name: Bitcoin to EUR
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eur'
+            show:
+              labels: false
+
+      - type: vertical-stack
+        title: Dogecoin
+        cards:
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.dogecoin_eur_to_doge
+            name: EUR to Dogecoin
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:dog'
+            show:
+              labels: false
+
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.dogecoin_doge_to_eur
+            name: Dogecoin to EUR
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eur'
+            show:
+              labels: false
+
+      - type: vertical-stack
+        title: Ethereum
+        cards:
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.ethereum_eur_to_ethereum
+            name: EUR to Ethereum
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eth'
+            show:
+              labels: false
+
+          - type: 'custom:mini-graph-card'
+            entities:
+              - sensor.ethereum_ethereum_to_eur
+            name: Ethereum to EUR
+            line_color: '[#735119](https://github.com/BigNocciolino/CryptoTracker/issues/735119)'
+            line_width: 2
+            hours_to_show: 12
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: 'mdi:currency-eur'
+            show:
+              labels: false
+
+# ------------------------------------------------------------ #
+#                       Work Systems View                      #
+# ------------------------------------------------------------ #
+  - id: 2
+    icon: mdi:server
+    title: Systems
+    cards:
+      - type: vertical-stack
+        title: "Fjarskipanir"
+        cards:
+          - type: entities
+            title: !secret linode_server_0
+            show_header_toggle: false
+            entities:
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Skapt"
+                icon: mdi:timer
+                state_color: true
+                format: relative
+                attribute: created
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: IP (v4)
+                icon: mdi:switch
+                state_color: true
+                attribute: ipv4_address
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: IP (v6)
+                icon: mdi:switch
+                state_color: true
+                attribute: ipv6_address
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Ritminni"
+                icon: mdi:harddisk
+                state_color: true
+                suffix: GB
+                attribute: memory
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Stað"
+                icon: mdi:earth
+                state_color: true
+                attribute: region
+              - type: attribute
+                entity: !secret linode_server_0_ui
+                name: "Tendra"
+                icon: mdi:server
+                state_color: true
+                attribute: device_class
+      - type: entities
+        title: !secret linode_server_1
+        show_header_toggle: false
+        card_mod:
+          style: |
+            :host {
+              padding-top: 72px
+            }
+        entities:
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: "Skapt"
+            icon: mdi:timer
+            state_color: true
+            format: relative
+            attribute: created
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: IP (v4)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv4_address
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: IP (v6)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv6_address
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: "Ritminni"
+            icon: mdi:harddisk
+            state_color: true
+            suffix: GB
+            attribute: memory
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: "Stað"
+            icon: mdi:earth
+            state_color: true
+            attribute: region
+          - type: attribute
+            entity: !secret linode_server_1_ui
+            name: "Tendra"
+            icon: mdi:server
+            state_color: true
+            attribute: device_class
+      - type: entities
+        title: !secret linode_server_2
+        show_header_toggle: false
+        card_mod:
+          style: |
+            :host {
+              padding-top: 72px
+            }
+        entities:
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: "Skapt"
+            icon: mdi:timer
+            state_color: true
+            format: relative
+            attribute: created
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: IP (v4)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv4_address
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: IP (v6)
+            icon: mdi:switch
+            state_color: true
+            attribute: ipv6_address
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: "Ritminni"
+            icon: mdi:harddisk
+            state_color: true
+            suffix: GB
+            attribute: memory
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: "Stað"
+            icon: mdi:earth
+            state_color: true
+            attribute: region
+          - type: attribute
+            entity: !secret linode_server_2_ui
+            name: "Tendra"
+            icon: mdi:server
+            state_color: true
+            attribute: device_class

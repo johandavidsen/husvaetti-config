@@ -1,7 +1,65 @@
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+# ------------------------------------------------------------ #
+#                Home-assistant Default Config                 #
+# ------------------------------------------------------------ #
+homeassistant:
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 50
 
+  # Name of the location where Home Assistant is running
+  name: !secret home_name
+
+  # C for Celcius, F for Fahrenheit
+  unit_system: metric
+
+  time_zone: !secret home_timezone
+
+  currency: DKK
+
+  packages: !include_dir_named packages
+
+# ------------------------------------------------------------ #
+#                     FrontEnd Config                          #
+# ------------------------------------------------------------ #
+frontend:
+  themes: !include_dir_merge_named themes
+
+lovelace:
+  mode: yaml
+
+# ------------------------------------------------------------ #
+#                     Enable features                          #
+# ------------------------------------------------------------ #
+config:
+
+updater:
+
+conversation:
+
+history:
+
+logbook:
+
+map:
+
+sun:
+
+# ------------------------------------------------------------ #
+#                     Groups Config                            #
+# ------------------------------------------------------------ #
 group: !include groups.yaml
+
+# ------------------------------------------------------------ #
+#                     Automations Config                       #
+# ------------------------------------------------------------ #
 automation: !include automations.yaml
+
+# ------------------------------------------------------------ #
+#                     Scripts Config                           #
+# ------------------------------------------------------------ #
 script: !include scripts.yaml
+
+# ------------------------------------------------------------ #
+#                     Scenes Config                            #
+# ------------------------------------------------------------ #
 scene: !include scenes.yaml

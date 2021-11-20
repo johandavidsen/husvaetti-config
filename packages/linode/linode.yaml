@@ -1,0 +1,13 @@
+# ------------------------------------------------------------ #
+#                       Linode Config                          #
+# ------------------------------------------------------------ #
+
+linode:
+  access_token: !secret linode_access_token
+
+binary_sensor:
+  - platform: linode
+    nodes:
+      - !secret linode_server_0
+      - !secret linode_server_1
+      - !secret linode_server_2

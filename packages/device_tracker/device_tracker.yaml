@@ -1,0 +1,9 @@
+# ------------------------------------------------------------ #
+#                    Device Tracker Config                     #
+# ------------------------------------------------------------ #
+device_tracker:
+  - platform: ddwrt
+    host: !secret DD_WRT_IP
+    username: !secret DD_WRT_USER
+    password: !secret DD_WRT_PASSWORD
+    interval_seconds: 15
