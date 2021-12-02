@@ -16,6 +16,7 @@ views:
 #                       Heima View                             #
 # ------------------------------------------------------------ #
   - id: 0
+    title: 
     icon: mdi:home
     name: Heima
     cards:

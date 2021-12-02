@@ -7,5 +7,10 @@
 *.log*
 *.db*
 *__pycache__*
+
+# Hide hacs
+custom_components/hacs/*
+
+# Hide system files
 known_devices.yaml
 secrets.yaml
