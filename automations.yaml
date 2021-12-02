@@ -1,1 +1,13 @@
-[]
+# ------------------------------------------------------------ #
+#                Set Kibibit them as default                   #
+# ------------------------------------------------------------ #
+- alias: Set Default Theme
+  description: ''
+  trigger:
+    - event: start
+      platform: homeassistant
+  condition: []
+  action:
+    - data:
+        name: kibibit
+      service: frontend.set_theme
